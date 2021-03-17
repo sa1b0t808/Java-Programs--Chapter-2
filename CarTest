@@ -1,0 +1,67 @@
+import javax.swing.JOptionPane;
+
+public class CarTest 
+{
+	public static void main(String[] args) 
+	{
+		String input = "";
+		boolean run = true; //loop control variable
+		
+		while (run)
+		{
+			input = JOptionPane.showInputDialog("Would you like to add a car?");
+			if(input.equalsIgnoreCase("Yes"))
+			{
+				input = JOptionPane.showInputDialog("Enter the car year");
+				System.out.println(input);
+				input = JOptionPane.showInputDialog("Enter Brand of Car");
+				System.out.print(input);
+				input = JOptionPane.showInputDialog("Enter Car type");
+				System.out.print(input);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null,"Have a Nice Day");
+				run = false;
+			}
+		
+			Car myBeemer = new Car(42,"BMW", 2018); //Parameter constructor
+			
+			System.out.println("The car is a " + myBeemer.getYear() + " " + myBeemer.getMake());
+			System.out.println(myBeemer.getFuelLevel() + " gallons of gas in the tank");
+			
+			myBeemer.addGas(22);
+			
+			System.out.println(myBeemer.getFuelLevel() + " gallon of gas in the tank.");
+			
+			myBeemer.drive(200); //mutator method that changes the state of our object
+			
+			System.out.println(myBeemer.getFuelLevel() + " gallon of gas in the tank.");
+			
+			Car alexCar = new Car(16,"Jeep", 2007);
+			
+			System.out.println("Alex's car is a  " + alexCar.getYear() + " " + alexCar.getMake());
+			System.out.println("There are " + alexCar.getFuelLevel() + " gallons");
+			
+			alexCar.addGas(16);
+			
+			System.out.println("There is now " + alexCar.getFuelLevel());
+			
+			//create instance of a class
+			Car newJeep = new Car(2018, "Jeep", 18);
+			
+			System.out.println(newJeep.getYear());
+			System.out.println(newJeep.getMake());
+			System.out.println(newJeep.getFuelLevel() + "gallons in the tank");
+			
+			//add gas method
+			newJeep.addGas(20);
+			
+			System.out.println("There is now " + alexCar.getFuelLevel());
+		}
+	}
+}
+		
+		
+			
+		
