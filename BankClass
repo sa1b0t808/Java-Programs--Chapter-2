@@ -1,0 +1,44 @@
+
+public class Bank 
+{
+	//
+	private double balance;
+	//private double withdraw
+	//private double deposit
+	
+	// Create Constructor with the Instance variable that is being used
+	public Bank(double aBalance)
+	{
+		balance = aBalance;
+		//this.balance = aBalance this keyword
+	}
+	//Create Default balance
+	public Bank()
+	{
+		balance = 0;
+	}
+	
+	//Create withdraw method mutator that takes money from your bank account
+	public void withdrawFunds (double withdrawAmount)
+	{
+		balance = balance - withdrawAmount;
+	}
+	//Create deposit method mutator that puts money into your bank account
+	public void depositFunds (double depositAmount)
+	{
+		balance = balance + depositAmount;
+	}
+	//Create a Add Interest program by multiplying the interest to the balance
+	public void addInterest (double rate)
+	{
+		rate = balance *.1;
+		balance = balance + rate;
+	}
+	
+	public double getBalance()
+	{
+		return balance;
+	}
+	
+	
+}
